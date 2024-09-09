@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexiFare - Bid for Your Ride!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background: linear-gradient(135deg, #f0f4f8, #e6e9ef);
+    }
+
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .cta-button:hover {
+      background: #218838;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #e7f0ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    .feature-img, .how-it-works-img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    /* Additional Styling */
+    .section {
+      margin-top: 20px;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FlexiFare</h1>
+    <p>Bid for Your Ride – Take Control of Your Fare!</p>
+    <a href="[App Store URL]" class="cta-button">Download on the App Store</a>
+    <a href="[Google Play URL]" class="cta-button">Get it on Google Play</a>
+  </header>
+
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <p>Choose your destination, bid for your ride, and select the best offer!</p>
+    <img src="C:\Users\DIGEESH\OneDrive\Desktop\cm\5_sem\project 1\hhiw.jpg" alt="How It Works" class="how-it-works-img">
+  </section>
+
+  <section id="features">
+    <h2>Features</h2>
+    <ul>
+      <li>Bid on Rides</li>
+      <li>Real-Time Tracking</li>
+      <li>Multiple Payment Options</li>
+    </ul>
+    <img src="C:\Users\DIGEESH\OneDrive\Desktop\cm\5_sem\project 1\2op.jpg" alt="Features" class="feature-img">
+  </section>
+
+  <section id="signup">
+    <h2>Sign Up/Log In</h2>
+    <form id="signup-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section id="bidding">
+    <h2>Bid for Your Ride</h2>
+    <form id="bidding-form">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" required>
+      <label for="bid">Your Bid:</label>
+      <input type="number" id="bid" name="bid" required>
+      <button type="submit">Place Bid</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Follow us on <a href="[Instagram URL]">Instagram</a>, <a href="[Facebook URL]">Facebook</a>, <a href="[Twitter URL]">Twitter</a>.</p>
+    <p>&copy; 2024 FlexiFare - All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const biddingForm = document.getElementById('bidding-form');
+      const signupForm = document.getElementById('signup-form');
+
+      biddingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const destination = document.getElementById('destination').value;
+        const bid = document.getElementById('bid').value;
+
+        if (!destination || bid <= 0) {
+          alert('Please enter a valid destination and bid amount.');
+          return;
+        }
+
+        alert(`Your bid of ${bid} for destination ${destination} has been placed.`);
+        // Handle bid submission logic here
+      });
+
+      signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+          alert('Please enter both email and password.');
+          return;
+        }
+
+        alert('Sign up/login successful.');
+        // Handle sign-up/login logic here
+      });
+    });
+  </script>
+</body>
+</html>
